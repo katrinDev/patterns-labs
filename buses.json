@@ -1,0 +1,161 @@
+{
+  "buses": [
+    {
+      "route_number": "A123",
+      "departure_date": "2023-04-01",
+      "departure_time": "08:30",
+      "destination": "New York",
+      "departure_station": "Central Station",
+      "departure_platform": "3",
+      "arrival_station": "Grand Central Station",
+      "ticket_price": 25.99,
+      "bus_model": "Volvo 9700",
+      "travel_time": "2h 15m"
+    },
+    {
+      "route_number": "B456",
+      "departure_date": "2023-04-02",
+      "departure_time": "11:45",
+      "destination": "Boston",
+      "departure_station": "South Station",
+      "departure_platform": "6",
+      "arrival_station": "North Station",
+      "ticket_price": 35.50,
+      "bus_model": "Mercedes-Benz Tourismo",
+      "travel_time": "3h 30m"
+    },
+    {
+      "route_number": "C789",
+      "departure_date": "2023-04-03",
+      "departure_time": "13:00",
+      "destination": "Philadelphia",
+      "departure_station": "30th Street Station",
+      "departure_platform": "1",
+      "arrival_station": "Greyhound Bus Terminal",
+      "ticket_price": 19.99,
+      "bus_model": "Scania Irizar",
+      "travel_time": "2h 45m"
+    },
+    {
+      "route_number": "D012",
+      "departure_date": "2023-04-04",
+      "departure_time": "17:15",
+      "destination": "Washington DC",
+      "departure_station": "Union Station",
+      "departure_platform": "4",
+      "arrival_station": "Dulles Airport Bus Station",
+      "ticket_price": 42.75,
+      "bus_model": "Neoplan Cityliner",
+      "travel_time": "4h"
+    },
+    {
+      "route_number": "E345",
+      "departure_date": "2023-04-05",
+      "departure_time": "09:00",
+      "destination": "Chicago",
+      "departure_station": "Greyhound Bus Terminal",
+      "departure_platform": "2",
+      "arrival_station": "Union Station",
+      "ticket_price": 55.00,
+      "bus_model": "Setra S 416 HDH",
+      "travel_time": "7h"
+    },
+    {
+      "route_number": "F678",
+      "departure_date": "2023-04-06",
+      "departure_time": "09:00",
+      "destination": "Chicago",
+      "departure_station": "Greyhound Bus Terminal",
+      "departure_platform": "2",
+      "arrival_station": "Union Station",
+      "ticket_price": 55.00,
+      "bus_model": "Setra S 416 HDH",
+      "travel_time": "7h"
+    },
+    {
+      "route_number": "G901",
+      "departure_date": "2023-04-07",
+      "departure_time": "09:00",
+      "destination": "Chicago",
+      "departure_station": "Greyhound Bus Terminal",
+      "departure_platform": "2",
+      "arrival_station": "Union Station",
+      "ticket_price": 55.00,
+      "bus_model": "Setra S 416 HDH",
+      "travel_time": "7h"
+    },
+    {
+      "route_number": "H234",
+      "departure_date": "2023-04-08",
+      "departure_time": "09:00",
+      "destination": "Chicago",
+      "departure_station": "Greyhound Bus Terminal",
+      "departure_platform": "2",
+      "arrival_station": "Union Station",
+      "ticket_price": 55.00,
+      "bus_model": "Setra S 416 HDH",
+      "travel_time": "7h"
+    },
+    {
+      "route_number": "I567",
+      "departure_date": "2023-04-09",
+      "departure_time": "09:00",
+      "destination": "Chicago",
+      "departure_station": "Greyhound Bus Terminal",
+      "departure_platform": "2",
+      "arrival_station": "Union Station",
+      "ticket_price": 55.00,
+      "bus_model": "Setra S 416 HDH",
+      "travel_time": "7h"
+    },
+    {
+      "route_number": "J890",
+      "departure_date": "2023-04-10",
+      "departure_time": "09:00",
+      "destination": "Chicago",
+      "departure_station": "Greyhound Bus Terminal",
+      "departure_platform": "2",
+      "arrival_station": "Union Station",
+      "ticket_price": 55.00,
+      "bus_model": "Setra S 416 HDH",
+      "travel_time": "7h"
+    },
+    {
+      "route_number": "K123",
+      "departure_date": "2023-04-11",
+      "departure_time": "09:00",
+      "destination": "Chicago",
+      "departure_station": "Greyhound Bus Terminal",
+      "departure_platform": "2",
+      "arrival_station": "Union Station",
+      "ticket_price": 55.00,
+      "bus_model": "Setra S 416 HDH",
+      "travel_time": "7h"
+    },
+    {
+      "route_number": "L456",
+      "departure_date": "2023-04-12",
+      "departure_time": "09:00",
+      "destination": "Chicago",
+      "departure_station": "Greyhound Bus Terminal",
+      "departure_platform": "2",
+      "arrival_station": "Union Station",
+      "ticket_price": 55.00,
+      "bus_model": "Setra S 416 HDH",
+      "travel_time": "7h"
+    },
+    {
+      "route_number": "M789",
+      "departure_date": "2023-04-13",
+      "departure_time": "09:00",
+      "destination": "Chicago",
+      "departure_station": "Greyhound Bus Terminal",
+      "departure_platform": "2",
+      "arrival_station": "Union Station",
+      "ticket_price": 55.00,
+      "bus_model": "Setra S 416 HDH",
+      "travel_time": "7h"
+    }
+  ]
+}
+
