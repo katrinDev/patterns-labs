@@ -1,18 +1,18 @@
 import { InboxOutlined } from "@ant-design/icons";
-import { Modal, Space, Tabs, TabsProps } from "antd";
+import { Modal, Space, Tabs } from "antd";
 import Dragger from "antd/es/upload/Dragger";
 import { FC, useState } from "react";
-import BusTable, { IBus } from "../components/BusTable";
-import InlineBuses from "../components/InlineBuses";
+import InlineProjects from "../components/InlineProjects";
+import { IProject, ProjectsTable } from "../components/ProjectsTable";
 
-const BussesPage: FC = () => {
-  const [files, setFiles] = useState<IBus[]>([]);
+const ProjectsPage: FC = () => {
+  const [files, setFiles] = useState<IProject[]>([]);
   return (
     <Space direction="vertical">
       <Dragger
         showUploadList={true}
         maxCount={1}
-        onRemove={(e) => setFiles([])}
+        onRemove={() => setFiles([])}
         action={""}
         beforeUpload={(file) => {
           try {
@@ -22,9 +22,9 @@ const BussesPage: FC = () => {
               try {
                 // console.log(e.target.result, "result");
                 const records = JSON.parse(e.target.result);
-                console.log(records.buses);
-                if (records?.buses) {
-                  setFiles(records.buses);
+                console.log(records.projects);
+                if (records?.projects) {
+                  setFiles(records.projects);
                 } else {
                   throw "";
                 }
@@ -42,7 +42,7 @@ const BussesPage: FC = () => {
           } catch (error) {
             Modal.error({
               title: `Failed to parse file`,
-              content: "Please make sure you uploaded correct buses json",
+              content: "Please make sure you uploaded correct projects json",
             });
 
             return false;
@@ -62,14 +62,14 @@ const BussesPage: FC = () => {
       </Dragger>
       <Tabs defaultActiveKey="1">
         <Tabs.TabPane tab="Table" key="1">
-          <BusTable data={files} />
+          <ProjectsTable data={files} />
         </Tabs.TabPane>
         <Tabs.TabPane tab="Inline" key="2">
-          <InlineBuses data={files} />
+          <InlineProjects data={files} />
         </Tabs.TabPane>
       </Tabs>
     </Space>
   );
 };
 
-export default BussesPage;
+export default ProjectsPage;

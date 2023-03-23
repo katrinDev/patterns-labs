@@ -199,7 +199,6 @@ const BusTable: FC<{ data: IBus[] }> = ({ data }) => {
       key: "route_number",
       sorter: (a, b) => a.route_number.localeCompare(b.route_number),
       sortDirections: ["ascend", "descend"],
-
       ...getColumnSearchProps("route_number"),
     },
     {
@@ -285,6 +284,7 @@ const BusTable: FC<{ data: IBus[] }> = ({ data }) => {
       <Table
         columns={columns}
         dataSource={data.map((item) => ({ ...item, key: item.route_number }))}
+        pagination={{ pageSize: 10 }}
       />
       ;
     </div>

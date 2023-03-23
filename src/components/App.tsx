@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import Gallery from "../pages/CarouselPage";
 import { Link } from "react-router-dom";
 import BussesPage from "../pages/BusesPage";
+import ProjectsPage from "../pages/ProjectsPage";
 
 const { Header, Content, Footer } = Layout;
 
@@ -16,6 +17,10 @@ const links = [
   {
     key: "/buses",
     label: "Buses",
+  },
+  {
+    key: "/projects",
+    label: "Projects",
   },
 ];
 
@@ -56,6 +61,7 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Gallery />}></Route>
             <Route path="/buses" element={<BussesPage />}></Route>
+            <Route path="/projects" element={<ProjectsPage />}></Route>
           </Routes>
         </div>
       </Content>

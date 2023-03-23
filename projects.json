@@ -1,0 +1,28 @@
+{
+  "projects": [
+    {
+      "projectName": "Project X",
+      "projectId": "PX001",
+      "plannedEffort": 100,
+      "resource": "John Doe",
+      "actualEffort": 80,
+      "remainingEffort": 20
+    },
+    {
+      "projectName": "Project Y",
+      "projectId": "PY002",
+      "plannedEffort": 150,
+      "resource": "Jane Smith",
+      "actualEffort": 120,
+      "remainingEffort": 30
+    },
+    {
+      "projectName": "Project Z",
+      "projectId": "PZ003",
+      "plannedEffort": 200,
+      "resource": "Bob Johnson",
+      "actualEffort": 180,
+      "remainingEffort": 20
+    }
+  ]
+}
