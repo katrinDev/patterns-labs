@@ -39,7 +39,7 @@ const App: React.FC = () => {
       <Header>
         <div className="logo" />
         <Menu
-          theme="dark"
+          theme="light"
           mode="horizontal"
           defaultSelectedKeys={["2"]}
           items={links.map((item) => ({
