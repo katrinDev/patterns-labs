@@ -277,7 +277,7 @@ const BusTable: FC<{ data: IBus[] }> = ({ data }) => {
   return (
     <div
       style={{
-        width: "90vw",
+        width: "60vw",
         minHeight: "600px",
       }}
     >
@@ -286,7 +286,6 @@ const BusTable: FC<{ data: IBus[] }> = ({ data }) => {
         dataSource={data.map((item) => ({ ...item, key: item.route_number }))}
         pagination={{ pageSize: 10 }}
       />
-      ;
     </div>
   );
 };

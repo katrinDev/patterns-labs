@@ -5,7 +5,7 @@ const InlineBuses: FC<{ data: IBus[] }> = ({ data }) => {
   return (
     <div
       style={{
-        width: "90vw",
+        width: "60vw",
         minHeight: "600px"
       }}
     >
