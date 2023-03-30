@@ -53,5 +53,9 @@
   "devDependencies": {
     "@types/react-highlight-words": "^0.16.4",
     "@types/react-router-dom": "^5.3.3"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/katrinDev/patterns-labs.git",
+  "author": "Katrin Polozkova <polozkovak8@gmail.com>",
+  "license": "MIT"
 }

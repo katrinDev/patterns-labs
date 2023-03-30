@@ -36,6 +36,7 @@ const App: React.FC = () => {
       className="layout"
       style={{
         minHeight: "100vh",
+        minWidth: "100vh"
       }}
     >
       <Sider trigger={null} collapsible collapsed={collapsed}>
