@@ -27,21 +27,19 @@ const Gallery: React.FC = () => (
     })}
     <a
       data-lg-size="1280-720"
-      data-video='{"source": [{"src":"../../public/v1.mp4", "type":"video/mp4"}], "attributes": {"preload": false, "playsinline": true, "controls": true}}'
+      data-video='{"source": [{"src":"/v1.mp4", "type":"video/mp4"}], "attributes": {"preload": false, "playsinline": true, "controls": true}}'
       // data-poster="/4.jpeg"
-      href="../../public/v2.mp4"
       data-sub-html="<h4>Flash video 1</h4>"
     >
-      <video src={"../../public/v1.mp4"} width={400} style={{ margin: 5 }} />
+      <video src={"/v1.mp4"} width={400} style={{ margin: 5 }} />
     </a>
     <a
       data-lg-size="1280-720"
-      data-video='{"source": [{"src":"../../public/v2.mp4", "type":"video/mp4"}], "attributes": {"preload": false, "playsinline": true, "controls": true}}'
+      data-video='{"source": [{"src":"/v2.mp4", "type":"video/mp4"}], "attributes": {"preload": false, "playsinline": true, "controls": true}}'
       // data-poster="/4.jpeg"
-      href="../../public/v1.mp4"
       data-sub-html="<h4>Flash video 2</h4>"
     >
-      <video src={"../../public/v2.mp4"} width={400} style={{ margin: 5 }} />
+      <video src={"/v2.mp4"} width={400} style={{ margin: 5 }} />
     </a>
  
   </LightGallery>
