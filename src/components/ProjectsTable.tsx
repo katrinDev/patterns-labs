@@ -21,6 +21,29 @@ export interface IProject {
 type DataIndex = keyof IProject;
 
 export const ProjectsTable: FC<{ data: IProject[] }> = ({ data }) => {
+  // Define a list of observers
+  const searchObservers: any = [];
+
+  // Define the observable object (subject)
+  const searchSubject = {
+    // Method to register an observer
+    addObserver: function (observer: any) {
+      searchObservers.push(observer);
+    },
+    // Method to remove an observer
+    removeObserver: function (observer: any) {
+      const index = searchObservers.indexOf(observer);
+      if (index > -1) {
+        searchObservers.splice(index, 1);
+      }
+    },
+    // Method to notify all observers of a search event
+    notifyObservers: function (selectedKeys: any, dataIndex: any) {
+      searchObservers.forEach(function (observer: any) {
+        observer.update(selectedKeys, dataIndex);
+      });
+    },
+  };
   const [searchText, setSearchText] = useState("");
   const [searchedColumn, setSearchedColumn] = useState("");
   const searchInput = useRef<InputRef>(null);
@@ -33,7 +56,23 @@ export const ProjectsTable: FC<{ data: IProject[] }> = ({ data }) => {
     confirm();
     setSearchText(selectedKeys[0]);
     setSearchedColumn(dataIndex);
+    searchSubject.notifyObservers(selectedKeys, dataIndex);
   };
+  class SearchObserver {
+    update(selectedKeys: any, dataIndex: any) {
+      console.log("Observer notified");
+    }
+  }
+
+  const a = {}
+
+  // Example usage:
+  const observer1 = new SearchObserver();
+  const observer2 = new SearchObserver();
+
+  // Register the observers with the observable object
+  searchSubject.addObserver(observer1);
+  searchSubject.addObserver(observer2);
   const handleReset = (
     clearFilters: () => void,
     confirm: { (param?: FilterConfirmProps | undefined): void; (): void },

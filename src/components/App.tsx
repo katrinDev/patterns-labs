@@ -33,7 +33,7 @@ const App: React.FC = () => {
     <Layout
       className="layout"
       style={{
-        height: "100vh",
+        minHeight: "100vh",
       }}
     >
       <Header>

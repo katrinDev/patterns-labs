@@ -5,6 +5,71 @@ import { FC, useState } from "react";
 import BusTable, { IBus } from "../components/BusTable";
 import InlineBuses from "../components/InlineBuses";
 
+class RecordsComposite {
+  records: any[] = [];
+  constructor() {
+    this.records = [];
+  }
+
+  add(record: any) {
+    this.records.push(record);
+  }
+
+  getBuses() {
+    const buses = [];
+    for (const record of this.records) {
+      buses.push(...record.getBuses());
+    }
+    return buses;
+  }
+}
+
+class Record {
+  buses: IBus[] = [];
+  constructor(buses: IBus[]) {
+    this.buses = buses;
+  }
+
+  getBuses() {
+    return this.buses;
+  }
+}
+
+function parseRecords(json: any) {
+  const records = new RecordsComposite();
+  const dataSingleton = (function () {
+    let instance: any;
+    function createInstance() {
+      const data = JSON.parse(json);
+      return data;
+    }
+    return {
+      getInstance: function () {
+        if (!instance) {
+          instance = createInstance();
+        }
+        return instance;
+      },
+    };
+  })();
+
+  const data = dataSingleton.getInstance();
+  if (data?.buses) {
+    const record = new Record(data.buses);
+    records.add(record);
+  } else if (Array.isArray(data)) {
+    for (const item of data) {
+      if (item?.buses) {
+        const record = new Record(item.buses);
+        records.add(record);
+      }
+    }
+  } else {
+    throw new Error("Invalid data format");
+  }
+  return records;
+}
+
 const BussesPage: FC = () => {
   const [files, setFiles] = useState<IBus[]>([]);
   return (
@@ -20,14 +85,10 @@ const BussesPage: FC = () => {
 
             reader.onload = (e: any) => {
               try {
-                // console.log(e.target.result, "result");
-                const records = JSON.parse(e.target.result);
-                console.log(records.buses);
-                if (records?.buses) {
-                  setFiles(records.buses);
-                } else {
-                  throw "";
-                }
+                const records = parseRecords(e.target.result);
+                const buses = records.getBuses();
+                console.log(records, buses);
+                setFiles(buses);
               } catch (error) {
                 Modal.error({
                   title: `Failed to parse file`,

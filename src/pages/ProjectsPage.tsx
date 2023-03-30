@@ -7,6 +7,24 @@ import { IProject, ProjectsTable } from "../components/ProjectsTable";
 
 const ProjectsPage: FC = () => {
   const [files, setFiles] = useState<IProject[]>([]);
+
+  class ParseJSONCommand {
+    fileReader: any;
+    constructor(fileReader: any) {
+      this.fileReader = fileReader;
+    }
+
+    execute() {
+      const records = JSON.parse(this.fileReader.result);
+      console.log(records.projects);
+      if (records?.projects) {
+        setFiles(records.projects);
+      } else {
+        throw "";
+      }
+    }
+  }
+
   return (
     <Space direction="vertical">
       <Dragger
@@ -18,16 +36,11 @@ const ProjectsPage: FC = () => {
           try {
             const reader = new FileReader();
 
+            const parseJSONCommand = new ParseJSONCommand(reader);
+
             reader.onload = (e: any) => {
               try {
-                // console.log(e.target.result, "result");
-                const records = JSON.parse(e.target.result);
-                console.log(records.projects);
-                if (records?.projects) {
-                  setFiles(records.projects);
-                } else {
-                  throw "";
-                }
+                parseJSONCommand.execute();
               } catch (error) {
                 Modal.error({
                   title: `Failed to parse file`,
